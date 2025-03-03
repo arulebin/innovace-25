@@ -45,7 +45,7 @@ export default function Home() {
               className="mb-6 overflow-hidden"
             >
               <motion.p
-                className="text-sm md:text-base text-gray-400 uppercase tracking-[0.2em] mb-1"
+                className="text-xl  text-gray-400 uppercase tracking-[0.2em] mb-1"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1, delay: 0.7 }}
