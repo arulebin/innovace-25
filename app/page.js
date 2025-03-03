@@ -50,7 +50,7 @@ export default function Home() {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1, delay: 0.7 }}
               >
-                St. Xavier's Catholic College of Engineering
+                St. Xavier&apos;s Catholic College of Engineering
               </motion.p>
 
               <motion.p
@@ -96,7 +96,7 @@ export default function Home() {
                   ease: [0.25, 0.1, 0.25, 1],
                 }}
               >
-                InnovACE'25
+                InnovACE&apos;25
               </motion.h1>
 
               <motion.div
@@ -182,7 +182,7 @@ export default function Home() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-black mb-8 text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-red-400 tracking-tight">
-              About InnovACE'25
+              About InnovACE&apos;25
             </h2>
             <div className="h-1 w-24 bg-red-600 mx-auto mb-10 rounded-full"></div>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
@@ -320,7 +320,7 @@ export default function Home() {
           >
             <h2 className="text-4xl md:text-5xl font-black mb-8 tracking-tight">Ready to Participate?</h2>
             <p className="text-xl mb-10 text-red-100 max-w-2xl mx-auto">
-              Register now to participate in InnovACE'25. Participation certificates will be provided for all events
+              Register now to participate in InnovACE&apos;25. Participation certificates will be provided for all events
               except AuraBeats.
             </p>
             <motion.a
@@ -342,8 +342,8 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-6 md:mb-0">
-              <h3 className="text-2xl font-bold text-red-500 mb-2">InnovACE'25</h3>
-              <p className="text-gray-400">St. Xavier's Catholic College of Engineering</p>
+              <h3 className="text-2xl font-bold text-red-500 mb-2">InnovACE&apos;25</h3>
+              <p className="text-gray-400">St. Xavier&apos;s Catholic College of Engineering</p>
             </div>
 
             <div className="text-center md:text-right">
@@ -358,7 +358,7 @@ export default function Home() {
           </div>
 
           <div className="mt-8 pt-6 border-t border-gray-800 text-center text-gray-500 text-sm">
-            © 2025 InnovACE'25 - All rights reserved
+            © 2025 InnovACE&apos;25 - All rights reserved
           </div>
         </div>
       </footer>
