@@ -1,5 +1,6 @@
 import { Inter, Roboto_Mono } from "next/font/google";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/react"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -25,6 +26,7 @@ export default function RootLayout({ children }) {
         className={`${inter.variable} ${robotoMono.variable} antialiased`}
       >
         {children}
+        <Analytics/>
       </body>
     </html>
   );
