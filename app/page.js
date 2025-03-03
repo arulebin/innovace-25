@@ -352,7 +352,7 @@ export default function Home() {
                 href="mailto:innovace@sxcce.edu"
                 className="text-red-400 hover:text-red-300 transition-colors duration-300 font-medium"
               >
-                innovace@sxcce.edu
+                {/* innovace@sxcce.edu */}
               </a>
             </div>
           </div>
