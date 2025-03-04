@@ -1,12 +1,12 @@
-"use client"
-import { motion, useScroll, useTransform } from "framer-motion"
-import EventCard from "@/components/EventCard"
-import Waves from "@/components/blocks/Waves"
-import { ChevronDown,MapPin } from "lucide-react"
+"use client";
+import { motion, useScroll, useTransform } from "framer-motion";
+import EventCard from "@/components/EventCard";
+import Waves from "@/components/blocks/Waves";
+import { ChevronDown, MapPin } from "lucide-react";
 
 export default function Home() {
-  const { scrollYProgress } = useScroll()
-  const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"])
+  const { scrollYProgress } = useScroll();
+  const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
 
   return (
     <div className="min-h-screen font-sans bg-black text-white">
@@ -123,11 +123,14 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 3.6 }}
             >
               <p className="text-xl text-gray-300 font-medium">
-                <span className="text-red-500">March 19-20, 2025</span> <span className="flex items-center justify-center gap-1.5"><MapPin /> Conference Hall</span>
+                <span className="text-red-500">March 19-20, 2025</span>{" "}
+                <span className="flex items-center justify-center gap-1.5">
+                  <MapPin /> Conference Hall
+                </span>
               </p>
             </motion.div>
 
-            <motion.a
+            {/* <motion.a
               href="https://forms.google.com"
               target="_blank"
               rel="noopener noreferrer"
@@ -139,7 +142,7 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 4 }}
             >
               Register Now
-            </motion.a>
+            </motion.a> */}
           </motion.div>
         </div>
 
@@ -167,7 +170,11 @@ export default function Home() {
             repeatType: "reverse",
           }}
         >
-          <ChevronDown className="w-8 h-8 text-red-500" />
+          <span className="flex flex-col text-sm items-center justify-center">
+            {" "}
+            Scroll Down
+            <ChevronDown className="w-10 h-10 text-red-500" />
+          </span>
         </motion.div>
       </section>
 
@@ -186,10 +193,17 @@ export default function Home() {
             </h2>
             <div className="h-1 w-24 bg-red-600 mx-auto mb-10 rounded-full"></div>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              Join us for an exciting two-day technical symposium featuring a variety of
-              <span className="text-red-400 font-medium"> technical and non-technical events</span>. Showcase your
-              skills, connect with peers, and win
-              <span className="text-red-400 font-medium"> exciting prizes!</span>
+              Join us for an exciting two-day technical symposium featuring a
+              variety of
+              <span className="text-red-400 font-medium">
+                {" "}
+                technical and non-technical events
+              </span>
+              . Showcase your skills, connect with peers, and win
+              <span className="text-red-400 font-medium">
+                {" "}
+                exciting prizes!
+              </span>
             </p>
           </motion.div>
         </div>
@@ -209,7 +223,9 @@ export default function Home() {
               Technical Events
             </h2>
             <div className="h-1 w-24 bg-red-600 mx-auto mb-8 rounded-full"></div>
-            <p className="text-xl text-gray-300">Challenge your technical knowledge and skills</p>
+            <p className="text-xl text-gray-300">
+              Challenge your technical knowledge and skills
+            </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -255,7 +271,9 @@ export default function Home() {
               Non-Technical Events
             </h2>
             <div className="h-1 w-24 bg-red-600 mx-auto mb-8 rounded-full"></div>
-            <p className="text-xl text-gray-300">Showcase your creativity and have fun</p>
+            <p className="text-xl text-gray-300">
+              Showcase your creativity and have fun
+            </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -318,10 +336,12 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-black mb-8 tracking-tight">Ready to Participate?</h2>
+            <h2 className="text-4xl md:text-5xl font-black mb-8 tracking-tight">
+              Ready to Participate?
+            </h2>
             <p className="text-xl mb-10 text-red-100 max-w-2xl mx-auto">
-              Register now to participate in InnovACE&apos;25. Participation certificates will be provided for all events
-              except AuraBeats.
+              Register now to participate in InnovACE&apos;25. Participation
+              certificates will be provided for all events except AuraBeats.
             </p>
             <motion.a
               href="https://forms.google.com"
@@ -342,8 +362,12 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-6 md:mb-0">
-              <h3 className="text-2xl font-bold text-red-500 mb-2">InnovACE&apos;25</h3>
-              <p className="text-gray-400">St. Xavier&apos;s Catholic College of Engineering</p>
+              <h3 className="text-2xl font-bold text-red-500 mb-2">
+                InnovACE&apos;25
+              </h3>
+              <p className="text-gray-400">
+                St. Xavier&apos;s Catholic College of Engineering
+              </p>
             </div>
 
             <div className="text-center md:text-right">
@@ -363,6 +387,5 @@ export default function Home() {
         </div>
       </footer>
     </div>
-  )
+  );
 }
-
