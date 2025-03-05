@@ -7,14 +7,14 @@ import { Clock, Users } from "lucide-react"
 export default function EventCard({ title, description, participants, duration, type, delay = 0 }) {
   const colors = {
     technical: {
-      badge: "bg-red-900/80 text-red-100 border border-red-500/50",
-      title: "text-red-500",
-      spotlight: "rgba(255, 0, 0, 0.15)",
+      badge: "bg-blue-900/80 text-blue-100 border border-blue-500/50",
+      title: "text-blue-500",
+      spotlight: "rgba(0, 102, 204, 0.15)",
     },
     nonTechnical: {
-      badge: "bg-black text-red-400 border border-red-500/50",
-      title: "text-red-400",
-      spotlight: "rgba(255, 0, 0, 0.1)",
+      badge: "bg-black text-blue-400 border border-blue-500/50",
+      title: "text-blue-400",
+      spotlight: "rgba(0, 102, 204, 0.1)",
     },
   }
 
@@ -29,7 +29,7 @@ export default function EventCard({ title, description, participants, duration, 
       className="rounded-xl overflow-hidden"
     >
       <SpotlightCard
-        className="h-full bg-gradient-to-br from-black to-gray-900 border border-gray-800 hover:border-red-900/50 transition-all duration-300"
+        className="h-full bg-gradient-to-br from-black to-gray-900 border border-gray-800 hover:border-blue-900/50 transition-all duration-300"
         spotlightColor={currentColors.spotlight}
       >
         <div className="p-6 flex flex-col h-full">
@@ -45,13 +45,13 @@ export default function EventCard({ title, description, participants, duration, 
 
           <div className="border-t border-gray-800 pt-4 mt-auto">
             <div className="flex items-center mb-3 text-gray-300">
-              <Users className="w-4 h-4 mr-2 text-red-500" />
+              <Users className="w-4 h-4 mr-2 text-blue-500" />
               <span className="text-sm">{participants}</span>
             </div>
 
             {duration && (
               <div className="flex items-center text-gray-300">
-                <Clock className="w-4 h-4 mr-2 text-red-500" />
+                <Clock className="w-4 h-4 mr-2 text-blue-500" />
                 <span className="text-sm">{duration}</span>
               </div>
             )}
@@ -61,4 +61,3 @@ export default function EventCard({ title, description, participants, duration, 
     </motion.div>
   )
 }
-
