@@ -123,7 +123,7 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 3.6 }}
             >
               <p className="text-xl text-gray-300 font-medium">
-                <span className="text-red-500">March 19-20, 2025</span>{" "}
+                <span className="text-red-500">March 20, 2025</span>{" "}
                 <span className="flex items-center justify-center gap-1.5">
                   <MapPin /> Conference Hall
                 </span>
@@ -193,7 +193,7 @@ export default function Home() {
             </h2>
             <div className="h-1 w-24 bg-red-600 mx-auto mb-10 rounded-full"></div>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              Join us for an exciting two-day technical symposium featuring a
+              Join us for an exciting technical symposium featuring a
               variety of
               <span className="text-red-400 font-medium">
                 {" "}
@@ -253,6 +253,14 @@ export default function Home() {
               type="technical"
               delay={0.3}
             />
+            <EventCard
+              title="Logo Bliss"
+              description="Design a creative logo based on a spot topic in this design challenge."
+              participants="Individual participation"
+              duration="30 minutes"
+              type="technical"
+              delay={0.1}
+            />
           </div>
         </div>
       </section>
@@ -277,14 +285,6 @@ export default function Home() {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <EventCard
-              title="Logo Bliss"
-              description="Design a creative logo based on a spot topic in this design challenge."
-              participants="Individual participation"
-              duration="30 minutes"
-              type="non-technical"
-              delay={0.1}
-            />
             <EventCard
               title="Snapshot"
               description="Capture amazing photographs based on a spot topic in this photography contest."
@@ -344,7 +344,7 @@ export default function Home() {
               certificates will be provided for all events except AuraBeats.
             </p>
             <motion.a
-              href="https://forms.google.com"
+              href="https://forms.gle/uaEGNdwzi3tKqGJ59"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-black text-red-500 font-bold py-4 px-10 rounded-full text-lg hover:bg-gray-900 transition-all duration-300 transform hover:scale-105 border-2 border-red-500 shadow-lg shadow-red-900/50"
