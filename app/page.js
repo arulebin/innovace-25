@@ -2,7 +2,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import EventCard from "@/components/EventCard";
 import Waves from "@/components/blocks/Waves";
-import { ChevronDown, MapPin } from "lucide-react";
+import { ChevronDown, MapPin, PhoneCall } from "lucide-react";
 
 export default function Home() {
   const { scrollYProgress } = useScroll();
@@ -179,8 +179,7 @@ export default function Home() {
             </h2>
             <div className="h-1 w-24 bg-blue-600 mx-auto mb-10 rounded-full"></div>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              Join us for an exciting technical symposium featuring a
-              variety of
+              Join us for an exciting technical symposium featuring a variety of
               <span className="text-blue-400 font-medium">
                 {" "}
                 technical and non-technical events
@@ -346,8 +345,8 @@ export default function Home() {
       {/* Footer with enhanced styling */}
       <footer className="py-12 px-4 bg-black text-white border-t border-blue-900">
         <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="mb-6 md:mb-0">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
+            <div className="text-center md:text-left">
               <h3 className="text-2xl font-bold text-blue-500 mb-2">
                 InnovACE&apos;25
               </h3>
@@ -357,13 +356,28 @@ export default function Home() {
             </div>
 
             <div className="text-center md:text-right">
-              <p className="mb-2 text-gray-300">For queries contact:</p>
-              <a
-                href="mailto:innovace@sxcce.edu"
-                className="text-blue-400 hover:text-blue-300 transition-colors duration-300 font-medium"
-              >
-                {/* innovace@sxcce.edu */}
-              </a>
+              <p className="mb-2 text-gray-300 font-semibold">
+                Staff Coordinators:
+              </p>
+              <ul className="space-y-1 text-gray-300">
+                <li>Dr. P.R. Sheebha Rani M.E., M.B.A., Ph.D. (HOD)</li>
+                <li>Dr. S.T. Sheriba M.E., Ph.D. (Faculty Advisor)</li>
+                <li>Dr. R. Barona M.E., Ph.D. (Assistant Faculty Advisor)</li>
+              </ul>
+            </div>
+
+            <div className="text-center md:text-right">
+              <p className="mb-2 text-gray-300 font-semibold">
+                Student Coordinators:
+              </p>
+              <ul className="space-y-1 text-gray-300">
+                <li>Miss. Jelesha I J (Secretary)</li>
+                <li className="flex items-center justify-center md:justify-end gap-2">
+                  <PhoneCall className="w-4 h-4 text-blue-500" />
+                  9626144221
+                </li>
+                <li>Miss. Kethzia S P (Joint Secretary)</li>
+              </ul>
             </div>
           </div>
 
