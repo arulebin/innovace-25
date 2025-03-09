@@ -45,7 +45,7 @@ export default function Home() {
               className="mb-6 overflow-hidden"
             >
               <motion.p
-                className="text-xl text-gray-400 uppercase tracking-[0.2em] mb-1"
+                className="text-xl text-gray-400 tracking-[0.2em] mb-1"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1, delay: 0.7 }}
@@ -60,6 +60,8 @@ export default function Home() {
                 transition={{ duration: 1, delay: 1 }}
               >
                 Department of Computer Science and Engineering
+                <br/>
+                Association of Computer Engineers
               </motion.p>
 
               <motion.div
@@ -360,9 +362,9 @@ export default function Home() {
                 Staff Coordinators:
               </p>
               <ul className="space-y-1 text-gray-300">
-                <li>Dr. P.R. Sheebha Rani M.E., M.B.A., Ph.D. (HOD)</li>
-                <li>Dr. S.T. Sheriba M.E., Ph.D. (Faculty Advisor)</li>
-                <li>Dr. R. Barona M.E., Ph.D. (Assistant Faculty Advisor)</li>
+                <li>Dr.P.R. Sheebha Rani, M.E., M.B.A., Ph.D. (HoD)</li>
+                <li>Dr.S.T. Sheriba, M.E., Ph.D. (Faculty Advisor)</li>
+                <li>Dr.R. Barona, M.E., Ph.D. (Assistant Faculty Advisor)</li>
               </ul>
             </div>
 
@@ -371,12 +373,12 @@ export default function Home() {
                 Student Coordinators:
               </p>
               <ul className="space-y-1 text-gray-300">
-                <li>Miss. Jelesha I J (Secretary)</li>
+                <li>Miss I.J. Jelesha (Secretary)</li>
                 <li className="flex items-center justify-center md:justify-end gap-2">
                   <PhoneCall className="w-4 h-4 text-blue-500" />
                   9626144221
                 </li>
-                <li>Miss. Kethzia S P (Joint Secretary)</li>
+                <li>Miss S.P. Kethzia (Joint Secretary)</li>
               </ul>
             </div>
           </div>
