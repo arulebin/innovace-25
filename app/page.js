@@ -125,7 +125,7 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 3.6 }}
             >
               <p className="text-xl text-gray-300 font-medium">
-                <span className="text-blue-500">March 20, 2025</span>{" "}
+                <span className="text-blue-500">March 21, 2025</span>{" "}
                 <span className="flex items-center justify-center gap-1.5">
                   <MapPin /> Conference Hall
                 </span>
