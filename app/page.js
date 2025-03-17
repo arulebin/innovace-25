@@ -127,7 +127,7 @@ export default function Home() {
               <p className="text-xl text-gray-300 font-medium">
                 <span className="text-blue-500">March 21, 2025</span>{" "}
                 <span className="flex items-center justify-center gap-1.5">
-                  <MapPin /> Conference Hall
+                  <MapPin /> Conference Hall (8:30A.M)
                 </span>
               </p>
             </motion.div>
@@ -220,7 +220,7 @@ export default function Home() {
               title="Paper Trail"
               description="Present your research papers in this competitive paper presentation event."
               participants="2 participants per team"
-              duration="4 minutes presentation"
+              duration="7 minutes presentation + 3 minutes Q&A"
               type="technical"
               delay={0.1}
             />
