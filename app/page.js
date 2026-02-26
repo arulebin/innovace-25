@@ -98,7 +98,7 @@ export default function Home() {
                   ease: [0.25, 0.1, 0.25, 1],
                 }}
               >
-                InnovACE&apos;25
+                InnovSPACE&apos;26
               </motion.h1>
 
               <motion.div
@@ -125,7 +125,7 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 3.6 }}
             >
               <p className="text-xl text-gray-300 font-medium">
-                <span className="text-blue-500">March 21, 2025</span>{" "}
+                <span className="text-blue-500">March 13, 2026</span>{" "}
                 <span className="flex items-center justify-center gap-1.5">
                   <MapPin /> Conference Hall (8:30A.M)
                 </span>
@@ -177,7 +177,7 @@ export default function Home() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-black mb-8 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-400 tracking-tight">
-              About InnovACE&apos;25
+              About InnovSPACE&apos;26
             </h2>
             <div className="h-1 w-24 bg-blue-600 mx-auto mb-10 rounded-full"></div>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
@@ -217,23 +217,23 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <EventCard
-              title="Paper Trail"
+              title="Tech Con"
               description="Present your research papers in this competitive paper presentation event."
               participants="2 participants per team"
               duration="7 minutes presentation + 3 minutes Q&A"
               type="technical"
               delay={0.1}
             />
-            <EventCard
+            {/* <EventCard
               title="Byte the Quiz"
               description="Test your technical knowledge in this fast-paced solo technical quiz."
               participants="Individual participation"
               duration="45 minutes"
               type="technical"
               delay={0.2}
-            />
+            /> */}
             <EventCard
-              title="Web Sculpt"
+              title="Web Matrix"
               description="Design and develop a website with HTML and CSS based on a spot topic."
               participants="Individual participation"
               duration="45 minutes"
@@ -241,10 +241,10 @@ export default function Home() {
               delay={0.3}
             />
             <EventCard
-              title="Logo Bliss"
-              description="Design a creative logo based on a spot topic in this design challenge."
+              title="Compile & Conquer"
+              description="A thrilling coding challenge that tests your problem-solving skills under pressure."
               participants="Individual participation"
-              duration="30 minutes"
+              duration="45 minutes"
               type="technical"
               delay={0.1}
             />
@@ -327,7 +327,7 @@ export default function Home() {
               Ready to Participate?
             </h2>
             <p className="text-xl mb-10 text-blue-100 max-w-2xl mx-auto">
-              Register now to participate in InnovACE&apos;25. Participation
+              Register now to participate in InnovSPACE&apos;26. Participation
               certificates will be provided for all events except AuraBeats.
             </p>
             <motion.a
@@ -350,7 +350,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
             <div className="text-center md:text-left">
               <h3 className="text-2xl font-bold text-blue-500 mb-2">
-                InnovACE&apos;25
+                InnovSPACE&apos;26
               </h3>
               <p className="text-gray-400">
                 St. Xavier&apos;s Catholic College of Engineering
@@ -362,9 +362,9 @@ export default function Home() {
                 Staff Coordinators:
               </p>
               <ul className="space-y-1 text-gray-300">
-                <li>Dr.P.R. Sheebha Rani, M.E., M.B.A., Ph.D. (HoD)</li>
-                <li>Dr.S.T. Sheriba, M.E., Ph.D. (Faculty Advisor)</li>
-                <li>Dr.R. Barona, M.E., Ph.D. (Assistant Faculty Advisor)</li>
+                       <li>Dr. A. Bamila Virgin Louis (HoD )</li>
+                        <li>Dr. R. Barona (Faculty Advisor)</li>
+                        <li>Mrs. M. C. Sheeba (Assistant Faculty Advisor)</li>
               </ul>
             </div>
 
@@ -373,18 +373,18 @@ export default function Home() {
                 Student Coordinators:
               </p>
               <ul className="space-y-1 text-gray-300">
-                <li>Miss I.J. Jelesha (Secretary)</li>
+                <li>Miss S.P. Kethzia (Secretary)</li>
                 <li className="flex items-center justify-center md:justify-end gap-2">
                   <PhoneCall className="w-4 h-4 text-blue-500" />
                   9626144221
                 </li>
-                <li>Miss S.P. Kethzia (Joint Secretary)</li>
+                <li>Mr. A. Ebin (Joint Secretary)</li>
               </ul>
             </div>
           </div>
 
           <div className="mt-8 pt-6 border-t border-gray-800 text-center text-gray-500 text-sm">
-            © 2025 InnovACE&apos;25 - All rights reserved
+            © 2025 InnovSPACE&apos;26 - All rights reserved
           </div>
         </div>
       </footer>
