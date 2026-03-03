@@ -273,36 +273,28 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <EventCard
-              title="Snapshot"
-              description="Capture amazing photographs based on a spot topic in this photography contest."
+              title="Intelliquest"
+              description="A thrilling quiz competition that tests your knowledge and quick thinking."
               participants="Individual participation"
               duration="30 minutes"
               type="non-technical"
               delay={0.2}
             />
             <EventCard
-              title="Memory Clash"
-              description="Test your memory skills in this exciting challenge."
+              title="Prompt2Pixel"
+              description="Unleash your creativity by generating images from text prompts."
               participants="Individual participation"
-              duration="Multiple rounds"
+              duration="30 minutes"
               type="non-technical"
               delay={0.3}
             />
             <EventCard
-              title="Connectivus"
+              title="Imagexplore"
               description="Find connections between seemingly unrelated items in this brain-teasing game."
               participants="Individual participation"
-              duration="Multiple rounds"
+              duration="30 minutes"
               type="non-technical"
               delay={0.4}
-            />
-            <EventCard
-              title="AuraBeats"
-              description="Identify songs from their background music in this musical challenge."
-              participants="Individual participation"
-              duration="Multiple rounds"
-              type="non-technical"
-              delay={0.5}
             />
           </div>
         </div>
