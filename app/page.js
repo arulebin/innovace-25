@@ -320,7 +320,7 @@ export default function Home() {
             </h2>
             <p className="text-xl mb-10 text-blue-100 max-w-2xl mx-auto">
               Register now to participate in InnovSPACE&apos;26. Participation
-              certificates will be provided for all events except AuraBeats.
+              certificates will be provided for all events.
             </p>
             <motion.a
               href="https://forms.gle/uaEGNdwzi3tKqGJ59"
