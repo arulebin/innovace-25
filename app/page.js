@@ -323,7 +323,7 @@ export default function Home() {
               certificates will be provided for all events.
             </p>
             <motion.a
-              href="https://forms.gle/uaEGNdwzi3tKqGJ59"
+              href="https://forms.gle/pjUZNBFR7ovdafQz9"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-black text-blue-500 font-bold py-4 px-10 rounded-full text-lg hover:bg-gray-900 transition-all duration-300 transform hover:scale-105 border-2 border-blue-500 shadow-lg shadow-blue-900/50"
@@ -371,6 +371,10 @@ export default function Home() {
                   9626144221
                 </li>
                 <li>Mr. A. Ebin (Joint Secretary)</li>
+                <li className="flex items-center justify-center md:justify-end gap-2">
+                  <PhoneCall className="w-4 h-4 text-blue-500" />
+                  9381476134
+                </li>
               </ul>
             </div>
           </div>
