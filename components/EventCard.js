@@ -5,54 +5,46 @@ import SpotlightCard from "./blocks/SpotlightCard"
 import { Clock, Users } from "lucide-react"
 
 export default function EventCard({ title, description, participants, duration, type, delay = 0 }) {
-  const colors = {
-    technical: {
-      badge: "bg-blue-900/80 text-blue-100 border border-blue-500/50",
-      title: "text-blue-500",
-      spotlight: "rgba(0, 102, 204, 0.15)",
-    },
-    nonTechnical: {
-      badge: "bg-black text-blue-400 border border-blue-500/50",
-      title: "text-blue-400",
-      spotlight: "rgba(0, 102, 204, 0.1)",
-    },
-  }
-
-  const currentColors = type === "technical" ? colors.technical : colors.nonTechnical
+  const isTech = type === "technical"
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 50 }}
+      initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay }}
       viewport={{ once: true }}
-      className="rounded-xl overflow-hidden"
+      className="rounded-2xl overflow-hidden group"
     >
       <SpotlightCard
-        className="h-full bg-gradient-to-br from-black to-gray-900 border border-gray-800 hover:border-blue-900/50 transition-all duration-300"
-        spotlightColor={currentColors.spotlight}
+        className="h-full bg-gray-950 border border-gray-800/60 hover:border-blue-800/40 transition-all duration-500"
+        spotlightColor={isTech ? "rgba(0, 102, 204, 0.15)" : "rgba(0, 102, 204, 0.1)"}
       >
         <div className="p-6 flex flex-col h-full">
           <span
-            className={`text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full w-fit ${currentColors.badge}`}
+            className={`text-[10px] font-bold uppercase tracking-[0.15em] px-3 py-1 rounded-full w-fit ${
+              isTech
+                ? "bg-blue-500/10 text-blue-400 border border-blue-500/20"
+                : "bg-blue-500/5 text-blue-300 border border-blue-400/15"
+            }`}
           >
-            {type === "technical" ? "Technical" : "Non-Technical"}
+            {isTech ? "Technical" : "Non-Technical"}
           </span>
 
-          <h3 className={`text-2xl font-extrabold mt-4 mb-3 ${currentColors.title} tracking-tight`}>{title}</h3>
+          <h3 className="text-xl font-bold mt-4 mb-2 text-white group-hover:text-blue-400 transition-colors duration-300 tracking-tight">
+            {title}
+          </h3>
 
-          <p className="text-gray-300 mb-6 flex-grow">{description}</p>
+          <p className="text-sm text-gray-500 mb-6 flex-grow leading-relaxed">{description}</p>
 
-          <div className="border-t border-gray-800 pt-4 mt-auto">
-            <div className="flex items-center mb-3 text-gray-300">
-              <Users className="w-4 h-4 mr-2 text-blue-500" />
-              <span className="text-sm">{participants}</span>
+          <div className="border-t border-gray-800/60 pt-4 mt-auto space-y-2">
+            <div className="flex items-center text-gray-400">
+              <Users className="w-3.5 h-3.5 mr-2 text-blue-500/70" />
+              <span className="text-xs">{participants}</span>
             </div>
-
             {duration && (
-              <div className="flex items-center text-gray-300">
-                <Clock className="w-4 h-4 mr-2 text-blue-500" />
-                <span className="text-sm">{duration}</span>
+              <div className="flex items-center text-gray-400">
+                <Clock className="w-3.5 h-3.5 mr-2 text-blue-500/70" />
+                <span className="text-xs">{duration}</span>
               </div>
             )}
           </div>

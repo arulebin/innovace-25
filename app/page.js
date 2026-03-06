@@ -1,18 +1,60 @@
 "use client";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import EventCard from "@/components/EventCard";
 import Waves from "@/components/blocks/Waves";
-import { ChevronDown, MapPin, PhoneCall } from "lucide-react";
+import { ChevronDown, MapPin, PhoneCall, Calendar, Clock, Trophy, Users, Code, Sparkles } from "lucide-react";
 
 export default function Home() {
   const { scrollYProgress } = useScroll();
   const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
     <div className="min-h-screen font-sans bg-black text-white">
+      {/* Sticky Navbar */}
+      <motion.nav
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+          scrolled
+            ? "bg-black/70 backdrop-blur-xl border-b border-white/10 shadow-lg shadow-blue-900/10"
+            : "bg-transparent"
+        }`}
+        initial={{ y: -80 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+      >
+        <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+          <span className="text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600 tracking-tight">
+            InnovSPACE&apos;26
+          </span>
+          <div className="hidden md:flex items-center gap-8 text-sm text-gray-400">
+            <a href="#about" className="hover:text-blue-400 transition-colors">About</a>
+            <a href="#technical" className="hover:text-blue-400 transition-colors">Technical</a>
+            <a href="#non-technical" className="hover:text-blue-400 transition-colors">Non-Technical</a>
+            <a href="#contact" className="hover:text-blue-400 transition-colors">Contact</a>
+          </div>
+          <motion.a
+            href="https://forms.gle/pjUZNBFR7ovdafQz9"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm font-semibold px-5 py-2 rounded-full bg-blue-600 hover:bg-blue-500 text-white transition-colors"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Register
+          </motion.a>
+        </div>
+      </motion.nav>
+
       <Waves
         lineColor="#0066cc"
-        backgroundColor="rgba(0, 102, 204, 0.15)"
+        backgroundColor="rgba(0, 102, 204, 0.12)"
         waveSpeedX={0.025}
         waveSpeedY={0.015}
         waveAmpX={50}
@@ -24,151 +66,132 @@ export default function Home() {
         yGap={30}
       />
 
-      {/* Cinematic Movie-Style Hero Section */}
+      {/* Hero Section */}
       <section className="h-screen relative overflow-hidden flex items-center justify-center">
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 z-10">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1.5 }}
+            transition={{ duration: 1 }}
             className="max-w-4xl"
           >
-            {/* Cinematic Presents Text */}
             <motion.div
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{
-                duration: 1.2,
-                delay: 0.5,
-                ease: [0.25, 0.1, 0.25, 1],
-              }}
+              transition={{ duration: 0.8, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
               className="mb-6 overflow-hidden"
             >
               <motion.p
-                className="text-xl text-gray-400 tracking-[0.2em] mb-1"
+                className="text-sm md:text-base uppercase text-white tracking-[0.3em] mb-2"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ duration: 1, delay: 0.7 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
               >
                 St. Xavier&apos;s Catholic College of Engineering
               </motion.p>
 
               <motion.p
-                className="text-base md:text-lg text-blue-500 font-medium mb-6"
+                className="text-sm md:text-base text-blue-400/80 font-medium mb-5"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ duration: 1, delay: 1 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
               >
                 Department of Computer Science and Engineering
-                <br/>
+                <br />
                 Association of Computer Engineers
               </motion.p>
 
               <motion.div
                 initial={{ scaleX: 0 }}
                 animate={{ scaleX: 1 }}
-                transition={{ duration: 1.5, delay: 1.3 }}
-                className="h-0.5 w-48 md:w-80 bg-blue-600 mx-auto mb-6"
+                transition={{ duration: 1, delay: 0.8 }}
+                className="h-px w-40 md:w-64 bg-gradient-to-r from-transparent via-blue-500 to-transparent mx-auto mb-5"
               />
 
               <motion.p
-                className="text-lg md:text-xl text-gray-200 italic"
+                className="text-base md:text-lg text-white italic font-light"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ duration: 1, delay: 1.8 }}
+                transition={{ duration: 0.8, delay: 1 }}
               >
                 presents
               </motion.p>
             </motion.div>
 
-            {/* Main Title with Cinematic Reveal */}
+            {/* Main Title */}
             <motion.div
               className="mb-6"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 2.3 }}
+              transition={{ duration: 0.8, delay: 1.2 }}
             >
               <motion.h1
-                className="text-6xl md:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-700 via-blue-500 to-blue-600 mb-2 tracking-tighter"
-                initial={{ scale: 1.2, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{
-                  duration: 1.2,
-                  delay: 2.5,
-                  ease: [0.25, 0.1, 0.25, 1],
-                }}
+                className="text-6xl md:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-b from-white via-blue-200 to-blue-500 mb-3 tracking-tighter leading-none"
+                initial={{ scale: 1.1, opacity: 0, filter: "blur(10px)" }}
+                animate={{ scale: 1, opacity: 1, filter: "blur(0px)" }}
+                transition={{ duration: 1, delay: 1.4, ease: [0.25, 0.1, 0.25, 1] }}
               >
                 InnovSPACE&apos;26
               </motion.h1>
 
               <motion.div
-                className="h-1 w-32 md:w-48 bg-gradient-to-r from-blue-700 to-blue-500 mx-auto rounded-full"
+                className="h-0.5 w-24 md:w-36 bg-gradient-to-r from-blue-600 to-blue-400 mx-auto rounded-full"
                 initial={{ scaleX: 0 }}
                 animate={{ scaleX: 1 }}
-                transition={{ duration: 1, delay: 3 }}
+                transition={{ duration: 0.8, delay: 1.8 }}
               />
             </motion.div>
 
             <motion.p
-              className="text-xl md:text-2xl text-gray-200 mb-8 font-light"
+              className="text-lg md:text-xl text-white mb-8 font-light tracking-widest uppercase"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 3.3 }}
+              transition={{ duration: 0.6, delay: 2 }}
             >
               Technical Symposium
             </motion.p>
 
+            {/* Date / Venue Badges */}
             <motion.div
-              className="mb-10"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 3.6 }}
+              className="flex flex-wrap items-center justify-center gap-3 mb-8"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 2.2 }}
             >
-              <p className="text-xl text-gray-300 font-medium">
-                <span className="text-blue-500">March 13, 2026</span>{" "}
-                <span className="flex items-center justify-center gap-1.5">
-                  <MapPin /> Conference Hall (8:30A.M)
-                </span>
-              </p>
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-950/60 border border-blue-800/50 text-blue-300 text-sm backdrop-blur-sm">
+                <Calendar className="w-4 h-4" /> March 13, 2026
+              </span>
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-950/60 border border-blue-800/50 text-blue-300 text-sm backdrop-blur-sm">
+                <Clock className="w-4 h-4" /> 8:30 AM
+              </span>
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-950/60 border border-blue-800/50 text-blue-300 text-sm backdrop-blur-sm">
+                <MapPin className="w-4 h-4" /> Conference Hall
+              </span>
             </motion.div>
           </motion.div>
         </div>
 
-        {/* Cinematic Lens Flare Effect */}
-        <motion.div
-          className="absolute w-[150%] h-[150%] rounded-full bg-gradient-to-r from-transparent via-blue-500/5 to-transparent"
-          initial={{ opacity: 0, x: "-100%" }}
-          animate={{ opacity: 1, x: "100%" }}
-          transition={{
-            duration: 2.5,
-            delay: 1.5,
-            ease: "easeInOut",
-          }}
-        />
-
         {/* Scroll indicator */}
         <motion.div
-          className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-2"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{
-            duration: 1,
-            delay: 4.5,
-            repeat: Number.POSITIVE_INFINITY,
-            repeatType: "reverse",
-          }}
+          transition={{ duration: 0.8, delay: 2.8 }}
         >
-          <span className="flex flex-col text-sm items-center justify-center">
-            {" "}
-            Scroll Down
-            <ChevronDown className="w-10 h-10 text-blue-500" />
-          </span>
+          <span className="text-xs uppercase tracking-[0.2em] text-gray-500">Scroll</span>
+          <motion.div
+            animate={{ y: [0, 8, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+          >
+            <ChevronDown className="w-5 h-5 text-blue-500/70" />
+          </motion.div>
         </motion.div>
       </section>
 
-      {/* About Section with enhanced styling */}
-      <section className="py-24 px-4 bg-gradient-to-b from-black to-gray-900">
-        <div className="max-w-6xl mx-auto">
+      {/* About Section */}
+      <section id="about" className="py-28 px-4 bg-gradient-to-b from-black via-gray-950 to-gray-900 relative">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,102,204,0.06),transparent_70%)]" />
+        <div className="max-w-6xl mx-auto relative z-10">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -176,29 +199,47 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-black mb-8 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-400 tracking-tight">
+            <p className="text-sm uppercase tracking-[0.3em] text-blue-500 mb-3">Welcome</p>
+            <h2 className="text-4xl md:text-5xl font-black mb-6 text-white tracking-tight">
               About InnovSPACE&apos;26
             </h2>
-            <div className="h-1 w-24 bg-blue-600 mx-auto mb-10 rounded-full"></div>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            <div className="h-0.5 w-16 bg-blue-500 mx-auto mb-8 rounded-full"></div>
+            <p className="text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed">
               Join us for an exciting technical symposium featuring a variety of
-              <span className="text-blue-400 font-medium">
-                {" "}
-                technical and non-technical events
-              </span>
-              . Showcase your skills, connect with peers, and win
-              <span className="text-blue-400 font-medium">
-                {" "}
-                exciting prizes!
-              </span>
+              <span className="text-blue-400 font-medium"> technical and non-technical events</span>.
+              Showcase your skills, connect with peers, and win
+              <span className="text-blue-400 font-medium"> exciting prizes!</span>
             </p>
           </motion.div>
+
+          {/* Stats Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+            {[
+              { icon: Code, label: "Technical Events", value: "3" },
+              { icon: Sparkles, label: "Non-Technical Events", value: "3" },
+              { icon: Trophy, label: "Prizes to Win", value: "6+" },
+            ].map((stat, i) => (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                viewport={{ once: true }}
+                className="text-center p-6 rounded-2xl bg-gray-900/50 border border-gray-800/50 backdrop-blur-sm"
+              >
+                <stat.icon className="w-6 h-6 text-blue-500 mx-auto mb-3" />
+                <p className="text-3xl md:text-4xl font-black text-white mb-1">{stat.value}</p>
+                <p className="text-xs text-gray-500 uppercase tracking-wider">{stat.label}</p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Technical Events Section with enhanced cards */}
-      <section className="py-24 px-4 bg-black">
-        <div className="max-w-6xl mx-auto">
+      {/* Technical Events */}
+      <section id="technical" className="py-28 px-4 bg-gray-900 relative">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(0,102,204,0.08),transparent_60%)]" />
+        <div className="max-w-6xl mx-auto relative z-10">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -206,39 +247,32 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-black mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-400 tracking-tight">
+            <p className="text-sm uppercase tracking-[0.3em] text-blue-500 mb-3">Compete</p>
+            <h2 className="text-4xl md:text-5xl font-black mb-6 text-white tracking-tight">
               Technical Events
             </h2>
-            <div className="h-1 w-24 bg-blue-600 mx-auto mb-8 rounded-full"></div>
-            <p className="text-xl text-gray-300">
+            <div className="h-0.5 w-16 bg-blue-500 mx-auto mb-6 rounded-full"></div>
+            <p className="text-lg text-gray-400">
               Challenge your technical knowledge and skills
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <EventCard
               title="Tech Con"
               description="Present your research papers in this competitive paper presentation event."
-              participants="2 participants per team"
-              duration="7 minutes presentation + 3 minutes Q&A"
+              participants="4 participants per team"
+              duration="7 min presentation + 3 min Q&A"
               type="technical"
               delay={0.1}
             />
-            {/* <EventCard
-              title="Byte the Quiz"
-              description="Test your technical knowledge in this fast-paced solo technical quiz."
-              participants="Individual participation"
-              duration="45 minutes"
-              type="technical"
-              delay={0.2}
-            /> */}
             <EventCard
               title="Web Matrix"
               description="Design and develop a website with HTML and CSS based on a spot topic."
               participants="Individual participation"
               duration="45 minutes"
               type="technical"
-              delay={0.3}
+              delay={0.2}
             />
             <EventCard
               title="Compile & Conquer"
@@ -246,15 +280,16 @@ export default function Home() {
               participants="Individual participation"
               duration="45 minutes"
               type="technical"
-              delay={0.1}
+              delay={0.3}
             />
           </div>
         </div>
       </section>
 
-      {/* Non-Technical Events Section with enhanced styling */}
-      <section className="py-24 px-4 bg-gradient-to-b from-gray-900 to-black">
-        <div className="max-w-6xl mx-auto">
+      {/* Non-Technical Events */}
+      <section id="non-technical" className="py-28 px-4 bg-black relative">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(0,102,204,0.08),transparent_60%)]" />
+        <div className="max-w-6xl mx-auto relative z-10">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -262,23 +297,24 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-black mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-400 tracking-tight">
+            <p className="text-sm uppercase tracking-[0.3em] text-blue-500 mb-3">Have Fun</p>
+            <h2 className="text-4xl md:text-5xl font-black mb-6 text-white tracking-tight">
               Non-Technical Events
             </h2>
-            <div className="h-1 w-24 bg-blue-600 mx-auto mb-8 rounded-full"></div>
-            <p className="text-xl text-gray-300">
+            <div className="h-0.5 w-16 bg-blue-500 mx-auto mb-6 rounded-full"></div>
+            <p className="text-lg text-gray-400">
               Showcase your creativity and have fun
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <EventCard
               title="Intelliquest"
               description="A thrilling quiz competition that tests your knowledge and quick thinking."
-              participants="Individual participation"
+              participants="2 participants"
               duration="30 minutes"
               type="non-technical"
-              delay={0.2}
+              delay={0.1}
             />
             <EventCard
               title="Prompt2Pixel"
@@ -286,7 +322,7 @@ export default function Home() {
               participants="Individual participation"
               duration="30 minutes"
               type="non-technical"
-              delay={0.3}
+              delay={0.2}
             />
             <EventCard
               title="Imagexplore"
@@ -294,93 +330,97 @@ export default function Home() {
               participants="Individual participation"
               duration="30 minutes"
               type="non-technical"
-              delay={0.4}
+              delay={0.3}
             />
           </div>
         </div>
       </section>
 
-      {/* Registration Section with enhanced CTA */}
-      <section className="py-24 px-4 bg-gradient-to-r from-blue-900 via-blue-800 to-blue-900 text-white relative overflow-hidden">
-        {/* Abstract background elements */}
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-0 left-0 w-64 h-64 rounded-full bg-blue-500 blur-3xl transform -translate-x-1/2 -translate-y-1/2"></div>
-          <div className="absolute bottom-0 right-0 w-96 h-96 rounded-full bg-blue-600 blur-3xl transform translate-x-1/2 translate-y-1/2"></div>
+      {/* Registration CTA */}
+      <section className="py-28 px-4 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-950 via-blue-900 to-blue-950" />
+        <div className="absolute inset-0">
+          <div className="absolute top-0 left-1/4 w-80 h-80 rounded-full bg-blue-500/10 blur-3xl" />
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 rounded-full bg-blue-600/10 blur-3xl" />
         </div>
 
-        <div className="max-w-4xl mx-auto text-center relative z-10">
+        <div className="max-w-3xl mx-auto text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-black mb-8 tracking-tight">
+            <p className="text-sm uppercase tracking-[0.3em] text-blue-300/60 mb-4">Don&apos;t Miss Out</p>
+            <h2 className="text-4xl md:text-5xl font-black mb-6 tracking-tight text-white">
               Ready to Participate?
             </h2>
-            <p className="text-xl mb-10 text-blue-100 max-w-2xl mx-auto">
-              Register now to participate in InnovSPACE&apos;26. Participation
-              certificates will be provided for all events.
+            <p className="text-lg mb-10 text-blue-200/70 max-w-xl mx-auto leading-relaxed">
+              Register now for InnovSPACE&apos;26. Participation certificates provided for all events.
             </p>
             <motion.a
               href="https://forms.gle/pjUZNBFR7ovdafQz9"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block bg-black text-blue-500 font-bold py-4 px-10 rounded-full text-lg hover:bg-gray-900 transition-all duration-300 transform hover:scale-105 border-2 border-blue-500 shadow-lg shadow-blue-900/50"
+              className="inline-flex items-center gap-2 bg-white text-blue-950 font-bold py-4 px-10 rounded-full text-lg hover:bg-blue-50 transition-all duration-300 shadow-xl shadow-blue-900/30"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
               Register Now
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
             </motion.a>
           </motion.div>
         </div>
       </section>
 
-      {/* Footer with enhanced styling */}
-      <footer className="py-12 px-4 bg-black text-white border-t border-blue-900">
+      {/* Footer */}
+      <footer id="contact" className="py-16 px-4 bg-black border-t border-gray-900">
         <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
-            <div className="text-center md:text-left">
-              <h3 className="text-2xl font-bold text-blue-500 mb-2">
-                InnovSPACE&apos;26
-              </h3>
-              <p className="text-gray-400">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
+            {/* Brand */}
+            <div>
+              <h3 className="text-xl font-bold text-white mb-2">InnovSPACE&apos;26</h3>
+              <p className="text-sm text-gray-500 leading-relaxed">
+                Technical Symposium
+                <br />
                 St. Xavier&apos;s Catholic College of Engineering
               </p>
             </div>
 
-            <div className="text-center md:text-right">
-              <p className="mb-2 text-gray-300 font-semibold">
-                Staff Coordinators:
+            {/* Staff Coordinators */}
+            <div>
+              <p className="text-sm font-semibold text-gray-300 uppercase tracking-wider mb-3">
+                Staff Coordinators
               </p>
-              <ul className="space-y-1 text-gray-300">
-                       <li>Dr. A. Bamila Virgin Louis (HoD )</li>
-                        <li>Mrs. M. C. Sheeba (Faculty Advisor)</li>
-                        <li>Dr. M. Antony Sheela (Assistant Faculty Advisor)</li>
+              <ul className="space-y-1.5 text-sm text-gray-500">
+                <li>Dr. A. Bamila Virgin Louis (HoD)</li>
+                <li>Mrs. M. C. Sheeba (Faculty Advisor)</li>
+                <li>Dr. M. Antony Sheela (Asst. Faculty Advisor)</li>
               </ul>
             </div>
 
-            <div className="text-center md:text-right">
-              <p className="mb-2 text-gray-300 font-semibold">
-                Student Coordinators:
+            {/* Student Coordinators */}
+            <div>
+              <p className="text-sm font-semibold text-gray-300 uppercase tracking-wider mb-3">
+                Student Coordinators
               </p>
-              <ul className="space-y-1 text-gray-300">
+              <ul className="space-y-1.5 text-sm text-gray-500">
                 <li>Miss S.P. Kethzia (Secretary)</li>
-                <li className="flex items-center justify-center md:justify-end gap-2">
-                  <PhoneCall className="w-4 h-4 text-blue-500" />
-                  9626144221
+                <li className="flex items-center gap-1.5">
+                  <PhoneCall className="w-3.5 h-3.5 text-blue-500" />
+                  7845525142
                 </li>
-                <li>Mr. A. Ebin (Joint Secretary)</li>
-                <li className="flex items-center justify-center md:justify-end gap-2">
-                  <PhoneCall className="w-4 h-4 text-blue-500" />
+                <li className="mt-2">Mr. A. Ebin (Joint Secretary)</li>
+                <li className="flex items-center gap-1.5">
+                  <PhoneCall className="w-3.5 h-3.5 text-blue-500" />
                   9381476134
                 </li>
               </ul>
             </div>
           </div>
 
-          <div className="mt-8 pt-6 border-t border-gray-800 text-center text-gray-500 text-sm">
-            © 2025 InnovSPACE&apos;26 - All rights reserved
+          <div className="mt-12 pt-6 border-t border-gray-900 text-center text-gray-600 text-xs tracking-wider">
+            &copy; 2026 InnovSPACE&apos;26 &mdash; All rights reserved
           </div>
         </div>
       </footer>
