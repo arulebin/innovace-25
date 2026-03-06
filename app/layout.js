@@ -12,8 +12,8 @@ const robotoMono = Roboto_Mono({
   variable: "--font-mono",
 });
 export const metadata = {
-  title: "InnovSPACE'26 | Technical Symposium",
-  description: "InnovSPACE'26 — A technical symposium by the Department of CSE, St. Xavier's Catholic College of Engineering",
+  title: "InnoSPACE'26 | Technical Symposium",
+  description: "InnoSPACE'26 — A technical symposium by the Department of CSE, St. Xavier's Catholic College of Engineering",
 };
 
 export default function RootLayout({ children }) {

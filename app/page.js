@@ -31,7 +31,7 @@ export default function Home() {
       >
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
           <span className="text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600 tracking-tight">
-            InnovSPACE&apos;26
+            InnoSPACE&apos;26
           </span>
           <div className="hidden md:flex items-center gap-8 text-sm text-gray-400">
             <a href="#about" className="hover:text-blue-400 transition-colors">About</a>
@@ -131,7 +131,7 @@ export default function Home() {
                 animate={{ scale: 1, opacity: 1, filter: "blur(0px)" }}
                 transition={{ duration: 1, delay: 1.4, ease: [0.25, 0.1, 0.25, 1] }}
               >
-                InnovSPACE&apos;26
+                InnoSPACE&apos;26
               </motion.h1>
 
               <motion.div
@@ -201,7 +201,7 @@ export default function Home() {
           >
             <p className="text-sm uppercase tracking-[0.3em] text-blue-500 mb-3">Welcome</p>
             <h2 className="text-4xl md:text-5xl font-black mb-6 text-white tracking-tight">
-              About InnovSPACE&apos;26
+              About InnoSPACE&apos;26
             </h2>
             <div className="h-0.5 w-16 bg-blue-500 mx-auto mb-8 rounded-full"></div>
             <p className="text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed">
@@ -262,7 +262,7 @@ export default function Home() {
               title="Tech Con"
               description="Present your research papers in this competitive paper presentation event."
               participants="4 participants per team"
-              duration="7 min presentation + 3 min Q&A"
+              duration="5 min presentation + 2 min Q&A"
               type="technical"
               delay={0.1}
             />
@@ -379,7 +379,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
             {/* Brand */}
             <div>
-              <h3 className="text-xl font-bold text-white mb-2">InnovSPACE&apos;26</h3>
+              <h3 className="text-xl font-bold text-white mb-2">InnoSPACE&apos;26</h3>
               <p className="text-sm text-gray-500 leading-relaxed">
                 Technical Symposium
                 <br />
@@ -420,7 +420,7 @@ export default function Home() {
           </div>
 
           <div className="mt-12 pt-6 border-t border-gray-900 text-center text-gray-600 text-xs tracking-wider">
-            &copy; 2026 InnovSPACE&apos;26 &mdash; All rights reserved
+            &copy; 2026 InnoSPACE&apos;26 &mdash; All rights reserved
           </div>
         </div>
       </footer>
