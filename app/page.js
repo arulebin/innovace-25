@@ -355,8 +355,8 @@ export default function Home() {
               </p>
               <ul className="space-y-1 text-gray-300">
                        <li>Dr. A. Bamila Virgin Louis (HoD )</li>
-                        <li>Dr. R. Barona (Faculty Advisor)</li>
-                        <li>Mrs. M. C. Sheeba (Assistant Faculty Advisor)</li>
+                        <li>Mrs. M. C. Sheeba (Faculty Advisor)</li>
+                        <li>Dr. M. Antony Sheela (Assistant Faculty Advisor)</li>
               </ul>
             </div>
 
