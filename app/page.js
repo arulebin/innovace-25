@@ -162,7 +162,7 @@ export default function Home() {
                 <Calendar className="w-4 h-4" /> March 13, 2026
               </span>
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-950/60 border border-blue-800/50 text-blue-300 text-sm backdrop-blur-sm">
-                <Clock className="w-4 h-4" /> 8:30 AM
+                <Clock className="w-4 h-4" /> 9:00 AM
               </span>
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-950/60 border border-blue-800/50 text-blue-300 text-sm backdrop-blur-sm">
                 <MapPin className="w-4 h-4" /> Conference Hall
@@ -270,7 +270,7 @@ export default function Home() {
               title="Web Matrix"
               description="Design and develop a website with HTML and CSS based on a spot topic."
               participants="Individual participation"
-              duration="45 minutes"
+              duration="1 hour"
               type="technical"
               delay={0.2}
             />
@@ -278,7 +278,7 @@ export default function Home() {
               title="Compile & Conquer"
               description="A thrilling coding challenge that tests your problem-solving skills under pressure."
               participants="Individual participation"
-              duration="45 minutes"
+              duration="1 hour"
               type="technical"
               delay={0.3}
             />
@@ -356,7 +356,7 @@ export default function Home() {
               Ready to Participate?
             </h2>
             <p className="text-lg mb-10 text-blue-200/70 max-w-xl mx-auto leading-relaxed">
-              Register now for InnovSPACE&apos;26. Participation certificates provided for all events.
+              Register now for InnovSPACE&apos;26. Last date to register: 11/03/2026. Registration fee should be paid on the spot. Participation certificates provided for all events.
             </p>
             <motion.a
               href="https://forms.gle/pjUZNBFR7ovdafQz9"
